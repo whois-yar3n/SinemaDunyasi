@@ -1,0 +1,28 @@
+﻿@model SinemaDunyasi.Models.Film
+@{
+    ViewData["Title"] = "Silme Onayı";
+}
+<div class="card border-danger shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0">DİKKAT: Film Silme Onayı</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <strong>"@Model.Ad"</strong> isimli filmi sistemden tamamen silmek istediğinize emin
+            misiniz?
+            <br />
+            <small class="text-muted">Bu işlem geri alınamaz.</small>
+        </div>
+        <div class="text-center mt-4">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger btn-lg px-4 me-2">
+                    Evet, Filmi
+                    Sil
+                </button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg px-4">Hayır, Vazgeç</a>
+            </form>
+        </div>
+</div>
+</div>
+

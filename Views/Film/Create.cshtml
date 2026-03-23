@@ -1,0 +1,55 @@
+﻿@model SinemaDunyasi.Models.Film
+@{
+ViewData["Title"] = "Yeni Film Ekle";
+}
+<div class="card shadow-sm">
+<div class="card-header bg-primary text-white">
+<h4 class="mb-0">Yeni Film Sisteme Ekle</h4>
+</div>
+<div class="card-body">
+<form asp-action="Create">
+<div class="row">
+<div class="form-group col-md-12 mb-3">
+<label asp-for="Ad" class="fw-bold">Film Adı</label>
+<input asp-for="Ad" class="form-control" placeholder="Filmin tam adını giriniz" />
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-6 mb-3">
+<label asp-for="Yonetmen" class="fw-bold">Yönetmen</label>
+<input asp-for="Yonetmen" class="form-control" />
+</div>
+<div class="form-group col-md-6 mb-3">
+<label asp-for="Tur" class="fw-bold">Film Türü</label>
+<input asp-for="Tur" class="form-control" placeholder="Örn: Dram, Aksiyon, Bilim
+Kurgu" />
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-6 mb-3">
+<label asp-for="Yil" class="fw-bold">Yapım Yılı</label>
+<input asp-for="Yil" class="form-control" type="number" value="2024" />
+</div>
+<div class="form-group col-md-6 mb-3">
+<label asp-for="Puan" class="fw-bold">IMDB Puanı</label>
+<input asp-for="Puan" class="form-control" type="number" step="0.1" />
+</div>
+</div>
+<div class="form-group mb-4">
+<label asp-for="AfisUrl" class="fw-bold">Film Afişi (Görsel URL)</label>
+<input asp-for="AfisUrl" class="form-control" placeholder="https://... afiş linkini
+yapıştırın" />
+</div>
+<div class="form-group mb-4 form-check">
+<label class="form-check-label text-success fw-bold">
+<input class="form-check-input" asp-for="VizyondaMi" /> Şu Anda Vizyonda Mı?
+</label>
+</div>
+<div class="form-group mt-3">
+<button type="submit" class="btn btn-success"><i class="bi bi-save"></i>
+Kaydet</button>
+<a asp-action="Index" class="btn btn-secondary ms-2">Listeye Dön</a>
+</div>
+</form>
+</div>
+</div>
